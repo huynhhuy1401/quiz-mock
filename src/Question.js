@@ -13,8 +13,8 @@ const Question = ({ question, onQuestionAnswer, questionNumber }) => {
 
   return (
     <>
-      <Card className="w-100 mt-2 bg-light">
-        <Card.Header className="bg-dark text-white">
+      <Card className="w-100 mt-2">
+        <Card.Header className="bg-primary text-white">
           Question {questionNumber + 1} of 25
         </Card.Header>
 
@@ -42,7 +42,7 @@ const Question = ({ question, onQuestionAnswer, questionNumber }) => {
             ))}
           </div>
           <div className="mt-4">
-            <Button onClick={answerQuestion} variant="outline-dark">
+            <Button onClick={answerQuestion} variant="outline-primary">
               Next Question
             </Button>
           </div>

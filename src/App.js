@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import { useFetchQuestion } from './hooks/useFetchQuestions'
 import Question from './Question'
+import Spinner from 'react-bootstrap/Spinner'
 
 const TOTAL_QUESTIONS = 25
 
@@ -34,9 +35,13 @@ function App() {
   }
 
   return (
-    <Container className="d-flex flex-column align-items-center">
+    <Container className="d-flex flex-column align-items-center text-secondary">
       <h1>Quiz Demo</h1>
-      {loading && <h3 className="mt-4">Loading questions...</h3>}
+      {loading && (
+        <Spinner animation="border" role="status" variant="primary">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      )}
       {error && <h3 className="mt-4">Error, please reload</h3>}
       {!gameStarted && (
         <Button
